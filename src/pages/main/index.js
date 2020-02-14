@@ -34,6 +34,7 @@ export default class Main extends Component {
 
     this.loadPeople(pageNumber);
   };
+
   nextPage = () => {
     const { page, pagesInfo } = this.state;
     if (pagesInfo.next === null) return;
@@ -50,10 +51,12 @@ export default class Main extends Component {
         <h1>Personagens</h1>
         { people.map(person => (
           <article key={person.name}>
-            <strong>{person.name}</strong>
-            <div>
-              <a href={person.url}>Informações</a>
-            </div>
+            <div>Nome: <strong>{person.name}</strong></div>
+            <div>Altura: <strong>{person.height}</strong></div>
+            <div>Cor do cabelo: <strong>{person.hair_color}</strong></div>
+            <div>Nascimento: <strong>{person.birth_year}</strong></div>
+            <div>Sexo: <strong>{person.gender}</strong></div>
+            
           </article>
         ))}
         <div className="actions">
